@@ -8,19 +8,19 @@
 #include "SingleStep.h"
 
 SingleStep::SingleStep(std::string description, int duration)
-    : AbsStep(description, duration)
+	: AbsStep(description, duration)
 {
 }
 
 SingleStep* SingleStep::clone() const 
 {
-    // √Ä compl√©ter pour construire une nouvelle √©tape simple en appelant le constructeur de copie
-    return new SingleStep(*this); // √Ä remplacer
+	// ¿ complÈter pour construire une nouvelle Ètape simple en appelant le constructeur de copie
+	return new SingleStep(*this); // ¿ remplacer
 }
 
 std::ostream& SingleStep::printToStream(std::ostream& o) const 
 {
-    // √Ä compl√©ter pour imprimer sur un stream une √©tape
-    o << "test singleStep";
-    return o;
+	// ¿ complÈter pour imprimer sur un stream une Ètape
+	o << m_description << " " << std::endl;
+	return o;
 }

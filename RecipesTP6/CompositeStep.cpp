@@ -2,7 +2,7 @@
 //  CompositeStep.cpp
 //  Implementation of the Class CompositeStep
 //  Created on:      19-mars-2022 11:23:22
-//  Original author: FranÃ§ois
+//  Original author: François
 ///////////////////////////////////////////////////////////
 
 #include "CompositeStep.h"
@@ -15,7 +15,7 @@ CompositeStep::CompositeStep(std::string title)
 CompositeStep::CompositeStep(const CompositeStep& mdd)
 	: AbsStep(mdd)
 {
-	for(auto it = mdd.cbegin(); it != mdd.cend(); it++) {
+	for (auto it = mdd.cbegin(); it != mdd.cend(); it++) {
 		addRecipeComponent(*it);
 	}
 }
@@ -37,12 +37,12 @@ RecipeComponentIterator_const CompositeStep::cbegin() const {
 }
 
 
-RecipeComponentIterator_const CompositeStep::cend() const 
+RecipeComponentIterator_const CompositeStep::cend() const
 {
 	return m_stepsContainer.cend();
 }
 
-RecipeComponentIterator CompositeStep::end() 
+RecipeComponentIterator CompositeStep::end()
 {
 	return  m_stepsContainer.end();
 }
@@ -70,24 +70,23 @@ void CompositeStep::deleteAllComponents(void)
 }
 
 int CompositeStep::getDuration() const
-{	
+{
 	int sommeDuration = 0;
 
-	for(auto&& step : m_stepsContainer) {
+	for (auto&& step : m_stepsContainer) {
 		sommeDuration += step->getDuration();
 	}
-	return sommeDuration; 
+	return sommeDuration;
 }
 
-std::ostream& CompositeStep::printToStream(std::ostream& o) const 
+std::ostream& CompositeStep::printToStream(std::ostream& o) const
 {
-	o << m_description << std::endl; 
+	o << m_description << std::endl;
 	int i = 1;
 	m_indent++;
-	
 	for (auto&& step : m_stepsContainer) {
 		indent(o) << i++ << " " << *step;
 	}
 	m_indent--;
-	return o;
+	return o;// << std::endl;
 }
