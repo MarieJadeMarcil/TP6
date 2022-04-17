@@ -6,6 +6,7 @@
 ///////////////////////////////////////////////////////////
 
 #include "CompositeStep.h"
+#include "AbsRecipeVisitor.h"
 
 CompositeStep::CompositeStep(std::string title)
 	: AbsStep(title, 0)
@@ -92,5 +93,5 @@ std::ostream& CompositeStep::printToStream(std::ostream& o) const
 		indent(o) << i++ << " " << *step;
 	}
 	m_indent--;
-	return o;// << std::endl;
+	return o;
 }

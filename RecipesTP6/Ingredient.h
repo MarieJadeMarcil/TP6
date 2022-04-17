@@ -2,7 +2,7 @@
 //  Ingredient.h
 //  Implementation of the Class Ingredient
 //  Created on:      19-mars-2022 11:23:22
-//  Original author: François
+//  Original author: Franï¿½ois
 ///////////////////////////////////////////////////////////
 
 #if !defined(EA_E18F6E2E_DCCF_48a7_A4E4_5006198DB785__INCLUDED_)
