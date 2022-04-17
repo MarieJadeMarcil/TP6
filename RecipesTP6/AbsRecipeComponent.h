@@ -12,6 +12,7 @@
 #include <string>
 
 #include "RecipeComponentContainer.h"
+#include "AbsRecipeComponent.h"
 
 class AbsRecipeComponent
 {

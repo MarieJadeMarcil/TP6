@@ -2,7 +2,7 @@
 //  CompositeStep.h
 //  Implementation of the Class CompositeStep
 //  Created on:      19-mars-2022 11:23:22
-//  Original author: François
+//  Original author: Franï¿½ois
 ///////////////////////////////////////////////////////////
 
 #if !defined(EA_18A3D912_AFB1_44eb_87B0_E9A94CE907F3__INCLUDED_)

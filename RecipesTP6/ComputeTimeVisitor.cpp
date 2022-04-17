@@ -17,22 +17,37 @@ ComputeTimeVisitor::ComputeTimeVisitor()
 }
 
 void ComputeTimeVisitor::processCompositeStep(CompositeStep& composite)
-{
-	// À compléter: itérer sur les enfants du composite et appliquer le visiteur à chaque enfant
+{	
+	// Ã€ complÃ©ter: itÃ©rer sur les enfants du composite et appliquer le visiteur Ã  chaque enfant
+
+	for(auto it = composite.begin(); it != composite.end(); it++) {
+		it->accept(*this);
+	}
 }
 
 void ComputeTimeVisitor::processIngredient(Ingredient& ingredient)
 {
-	// À compléter: ajouter la durée de préparation de l'ingrédient au temps total de préparation
+	// Ã€ complÃ©ter: ajouter la durÃ©e de prÃ©paration de l'ingrÃ©dient au temps total de prÃ©paration
+	m_preparationTime += ingredient.getDuration();
+
 }
 
 void ComputeTimeVisitor::processRecipe(Recipe& recipe)
 {
-	// À compléter: itérer sur les ingrédients et appliquer le visiteur à chaque enfant
-	//              itérer sur chaque étape et appliquer le visiteur à chaque étape
+	// Ã€ complÃ©ter: itÃ©rer sur les ingrÃ©dients et appliquer le visiteur Ã  chaque enfant
+	//              itÃ©rer sur chaque Ã©tape et appliquer le visiteur Ã  chaque Ã©tape
+	for(auto it = recipe.begin(); it != recipe.end(); it ++) {
+		it->accept(*this);
+	}
+	for(auto it = recipe.begin_step(); it != recipe.end_step(); it ++) {
+		it->accept(*this);
+	}
+
+
 }
 
 void ComputeTimeVisitor::processSingleStep(SingleStep& step)
 {
-	// À compléter: ajouter la durée de réalisation de l'étape au temps total de réalisation
+	// Ã€ complÃ©ter: ajouter la durÃ©e de rÃ©alisation de l'Ã©tape au temps total de rÃ©alisation
+	m_realizationTime += step.getDuration();
 }

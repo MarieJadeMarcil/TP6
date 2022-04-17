@@ -2,7 +2,7 @@
 //  CompositeStep.cpp
 //  Implementation of the Class CompositeStep
 //  Created on:      19-mars-2022 11:23:22
-//  Original author: François
+//  Original author: Franï¿½ois
 ///////////////////////////////////////////////////////////
 
 #include "CompositeStep.h"
@@ -23,6 +23,10 @@ CompositeStep::CompositeStep(const CompositeStep& mdd)
 CompositeStep* CompositeStep::clone() const
 {
 	return new CompositeStep(*this);
+}
+
+void CompositeStep::accept(class AbsRecipeVisitor& visitor) {
+	visitor.processCompositeStep(*this);
 }
 
 RecipeComponentIterator CompositeStep::begin() {

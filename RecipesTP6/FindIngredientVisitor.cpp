@@ -18,25 +18,26 @@ FindIngredientVisitor::FindIngredientVisitor(const char* ingredientName)
 
 void FindIngredientVisitor::processCompositeStep(CompositeStep& composite)
 {
-	// RIEN À FAIRE POUR LES ÉTAPES COMPOSITES
+	// RIEN Ã€ FAIRE POUR LES Ã‰TAPES COMPOSITES
 }
 
 void FindIngredientVisitor::processIngredient(Ingredient& ingredient)
 {
-	// À compléter: vérifier si le nom du produit utilisé comme ingrédient correspond au nom cherché
-	//              si oui, ajouter l'itérateur sur cet ingrédient dans la liste des ingrédients trouvés
+	// Ã€ complÃ©ter: vÃ©rifier si le nom du produit utilisÃ© comme ingrÃ©dient correspond au nom cherchÃ©
+	//              si oui, ajouter l'itÃ©rateur sur cet ingrÃ©dient dans la liste des ingrÃ©dients trouvÃ©s
+	m_searchedName == ingredient.get
 }
 
 void FindIngredientVisitor::processRecipe(Recipe& recipe)
 {
-	// À compléter: itérer sur tous les ingrédients de la recette
-	//                   - conserver un pointeur sur l'itérateur de l'ingrédient
-	//                   - appliquer le visiteur sur l'ingrédient
+	// ï¿½ complï¿½ter: itï¿½rer sur tous les ingrï¿½dients de la recette
+	//                   - conserver un pointeur sur l'itï¿½rateur de l'ingrï¿½dient
+	//                   - appliquer le visiteur sur l'ingrï¿½dient
 }
 
 void FindIngredientVisitor::processSingleStep(SingleStep& step)
 {
-	// RIEN À FAIRE POUR UNE ÉTAPE SIMPLE
+	// RIEN ï¿½ FAIRE POUR UNE ï¿½TAPE SIMPLE
 }
 
 FoundIngredientIterator FindIngredientVisitor::begin()
