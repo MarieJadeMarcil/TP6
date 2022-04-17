@@ -2,13 +2,11 @@
 //  Ingredient.cpp
 //  Implementation of the Class Ingredient
 //  Created on:      19-mars-2022 11:23:22
-//  Original author: François
+//  Original author: Franï¿½ois
 ///////////////////////////////////////////////////////////
 
 #include "Ingredient.h"
-
-
-
+#include "AbsRecipeVisitor.h"
 
 Ingredient::Ingredient(std::string name, int duration, const AbsProduct& product)
 	: AbsIngredient(name, duration), m_product(product)
@@ -17,7 +15,12 @@ Ingredient::Ingredient(std::string name, int duration, const AbsProduct& product
 
 Ingredient* Ingredient::clone() const
 {
-	return new Ingredient(*this); // makes sense
+	return new Ingredient(*this);
+}
+
+void Ingredient::accept(class AbsRecipeVisitor& visitor)
+{
+	visitor.processIngredient(*this);
 }
 
 const AbsProduct& Ingredient::getProduct() const
@@ -27,8 +30,7 @@ const AbsProduct& Ingredient::getProduct() const
 
 std::ostream& Ingredient::printToStream(std::ostream& o) const 
 {
-	// À compléter pour imprimer sur un stream une catégorie et ses produits
-	o << m_product.getName() << " " << m_description << std::endl; // UNTESTED
-	return o;
+	// Ã€ complÃ©ter pour imprimer sur un stream une catÃ©gorie et ses produits
+	return o << m_product.getName() << " " << m_description << std::endl;
 }
 
