@@ -18,7 +18,12 @@ LitteralFormatStrategy::LitteralFormatStrategy()
 
 std::string LitteralFormatStrategy::format(int time) const 
 {
-	// À compléter: décomposer la durée et construire une chaine avec en format litéral
-
-	return std::string();
+	// Ã€ complÃ©ter: dÃ©composer la durÃ©e et construire une chaine avec en format litÃ©ral
+    auto [days, hours, minutes, seconds] = decomposeTime(time);
+	return std::string(
+           std::to_string(days) + " days " + 
+           std::to_string(hours) + " hours " + 
+           std::to_string(minutes) + " minutes " + 
+           std::to_string(seconds) + " secondes "
+           );
 }

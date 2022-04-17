@@ -6,6 +6,7 @@
 ///////////////////////////////////////////////////////////
 
 #include "SingleStep.h"
+#include "AbsRecipeVisitor.h"
 
 SingleStep::SingleStep(std::string description, int duration)
 	: AbsStep(description, duration)
@@ -14,13 +15,17 @@ SingleStep::SingleStep(std::string description, int duration)
 
 SingleStep* SingleStep::clone() const 
 {
-	// À compléter pour construire une nouvelle étape simple en appelant le constructeur de copie
-	return new SingleStep(*this); // À remplacer
+	// Ã€ complÃ©ter pour construire une nouvelle Ã©tape simple en appelant le constructeur de copie
+	return new SingleStep(*this); 
+}
+
+void SingleStep::accept(class AbsRecipeVisitor& visitor)
+{
+	visitor.processSingleStep(*this);
 }
 
 std::ostream& SingleStep::printToStream(std::ostream& o) const 
 {
-	// À compléter pour imprimer sur un stream une étape
-	o << m_description << " " << std::endl;
-	return o;
+	// Ã€ complÃ©ter pour imprimer sur un stream une Ã©tape
+	return o << m_description << " " << std::endl;
 }

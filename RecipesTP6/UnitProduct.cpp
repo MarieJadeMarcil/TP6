@@ -30,6 +30,5 @@ int UnitProduct::getQuantity() const
 
 std::ostream& UnitProduct::printToStream(std::ostream& o) const
 {
-	return o << m_name << "(from " << getOrigin() << ") "
-		<< m_price << "/pc.\n";
+	return o << m_name << "(from " << getOrigin() << ") " << m_price << "/pc.\n";
 }
