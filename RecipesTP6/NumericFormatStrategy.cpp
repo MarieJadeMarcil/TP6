@@ -7,6 +7,7 @@
 
 #include "NumericFormatStrategy.h"
 
+// Objet singleton est instancié Q4.3
 NumericFormatStrategy NumericFormatStrategy::instance;
 
 NumericFormatStrategy::NumericFormatStrategy()

@@ -8,6 +8,7 @@
 #include "LitteralFormatStrategy.h"
 #include "TimeFormater.h"
 
+// Objet singleton est instancié Q4.3
 LitteralFormatStrategy LitteralFormatStrategy::instance;
 
 

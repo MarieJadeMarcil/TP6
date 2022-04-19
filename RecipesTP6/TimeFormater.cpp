@@ -20,20 +20,22 @@ void TimeFormater::registerFormatStrategy(std::string id, const FormatStrategy* 
 	m_strategyRegistry[id] = strategy;
 }
 
+
+// Objet singleton est instancié Q4.3
 TimeFormater& TimeFormater::getInstance()
 {
 	static TimeFormater instance;
 	return instance;
 }
 
-std::string TimeFormater::formatTime(int time)
-{
+std::string TimeFormater::formatTime(int time) {
 	std::string sReturn = (getInstance().m_FormatStrategy != nullptr) ? getInstance().m_FormatStrategy->format(time) : std::to_string(time);
 	return  sReturn;
 }
 
 void TimeFormater::selectFormatStrategy(std::string strategy_id)
 {
+	// Objet singleton est instancié Q4.3
 	const FormatStrategy* newStrategy = getInstance().m_strategyRegistry[strategy_id];
 	if (newStrategy != nullptr)
 		getInstance().m_FormatStrategy = newStrategy;
