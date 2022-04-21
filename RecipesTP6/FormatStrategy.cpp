@@ -17,10 +17,10 @@ FormatStrategy::time_decomposition FormatStrategy::decomposeTime(int time) const
 {
 	// À compléter: décomposer la durée en nombre de jours, heures, minutes et secondes
 	//              retourner le résultat de la décomposition dans un objet time_decomposition
-	int days = time / 86400;
-	int hours = days / 3600;
-	int minutes = hours / 60;
-	int seconds = seconds / 60;
+	int days = time / 86'400;
+	int hours = time / 3'600;
+	int minutes = time / 60 % 60;
+	int seconds = time % 60;
 
 	return time_decomposition(days, hours, minutes, seconds);
 }
